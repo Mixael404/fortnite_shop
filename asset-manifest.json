@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/fortnite_shop/static/css/main.928accfe.css",
-    "main.js": "/fortnite_shop/static/js/main.32a99741.js",
+    "main.js": "/fortnite_shop/static/js/main.fab77175.js",
     "index.html": "/fortnite_shop/index.html",
     "main.928accfe.css.map": "/fortnite_shop/static/css/main.928accfe.css.map",
-    "main.32a99741.js.map": "/fortnite_shop/static/js/main.32a99741.js.map"
+    "main.fab77175.js.map": "/fortnite_shop/static/js/main.fab77175.js.map"
   },
   "entrypoints": [
     "static/css/main.928accfe.css",
-    "static/js/main.32a99741.js"
+    "static/js/main.fab77175.js"
   ]
 }
