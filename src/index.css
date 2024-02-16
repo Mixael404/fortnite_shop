@@ -46,6 +46,7 @@ nav {
   cursor: pointer;
   z-index: 50;
   padding: 0.5rem;
+  transition: all 200ms ease-in-out;
 }
 
 .cart__quantity{
@@ -56,5 +57,73 @@ nav {
   .cart{
     top: 5rem;
     bottom: unset;
+  }
+}
+
+.basket__list{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 100;
+
+  width: 50rem;
+  max-width: 95%;
+  background-color: #fff;
+  box-shadow: 2px 2px 3px 3px rgba(0, 0, 0, 0.5);
+
+  animation: basket_up 300ms linear forwards;
+}
+
+
+@keyframes basket_up {
+  0%{
+    opacity: 0.5;
+    top: 60%;
+  }
+  100%{
+    opacity: 1;
+    top: 50%;
+  }
+}
+.basket__close{
+  cursor: pointer;
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  color: #fff;
+  transition: all 300ms ease-in-out;
+}
+.item__delete{
+  cursor: pointer;
+  transition: all 300ms ease-in-out;
+}
+.cart:hover{
+  transform: scale(1.1,1.1);
+}
+.basket__close:hover, .item__delete:hover{
+  transform: scale(1.3,1.3);
+}
+
+.diffOneBtn, .addOneBtn{
+  margin: 0 1rem;
+  font-size: 1.3rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+#toast-container{
+  top: 3rem !important;
+  animation: fade-in 250ms ease-in-out;
+}
+
+@keyframes fade-in {
+  0%{
+    opacity: 0;
+    transform: translateY(2rem);
+  }
+
+  100%{
+    opacity: 1;
+    transform: translateY(0);
   }
 }
