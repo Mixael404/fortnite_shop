@@ -1,10 +1,14 @@
 import { useContext } from "react"
 import { shopContext } from "./Shop"
+import { contextShop } from "../Context";
 export default function BasketItem({ id, name, price, quantity }) {
-
     const removeFn = useContext(shopContext).removeFromBasket;
     const addOne = useContext(shopContext).addOneItem;
     const diffOne = useContext(shopContext).diffOneItem;
+
+    const {example} = useContext(contextShop)
+    console.log(example);
+
     const totalPrice = price * quantity
     return (
         <li className="collection-item">

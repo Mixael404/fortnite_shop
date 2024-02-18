@@ -24,7 +24,7 @@ export default function Shop() {
             return el
         })
         setOrder(newOrder);
-    }
+    } //+
     const diffOneItem = (id) => {
         let indexOfTargetElement;
         const newOrder = order.map((el, index) => {
@@ -38,15 +38,15 @@ export default function Shop() {
             newOrder.splice(indexOfTargetElement, 1)
         }
         setOrder(newOrder)
-    }
+    } //+
     const closeAlert = () => {
         setAlertName('')
-    }
+    } //+
 
     const removeFromBasket = (id) => {
         const newOrder = order.filter(item => item.mainId !== id)
         setOrder(newOrder)
-    }
+    } //+
 
     const addToBasket = (item) => {
         const itemIndex = order.findIndex((element) => {
@@ -67,13 +67,12 @@ export default function Shop() {
             })
             setOrder(newOrder)
         }
-        console.log(item.displayName);
         setAlertName(item.displayName)
-    }
+    } //+
 
     const handleBasketShow = () => {
         setShowBasket(!showBasket)
-    }
+    } //+
 
 
     useEffect(function getGoods() {
