@@ -1,11 +1,12 @@
 import { useContext } from "react"
 import BasketItem from "./BasketItem"
 import { shopContext } from "./Shop"
+import { contextShop } from "../Context";
 
 export default function BasketList() {
-    const order = useContext(shopContext).order;
-    const closeBasket = useContext(shopContext).handleBasketShow;
-
+    const {order} = useContext(contextShop);
+    const {handleBasketShow} = useContext(contextShop);
+    
     let totalPrice;
     if(order.length){
         totalPrice = order.reduce((acc, el) => {
@@ -33,7 +34,7 @@ export default function BasketList() {
             <button className="btn-small orderBtn">Order</button>
             </li>
             <i
-            onClick={closeBasket}
+            onClick={handleBasketShow}
             className="material-icons basket__close">close</i>
             
         </ul>

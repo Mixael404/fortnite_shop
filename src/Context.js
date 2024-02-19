@@ -31,6 +31,10 @@ export const ContextProvider = ({children}) => {
     value.handleBasketShow = () => {
         dispatch({type: 'SHOW_MODAL'})
     }
+    value.setGoods = (data) => {
+        dispatch({type: "SET_GOODS", payload: data})
+    }
+
     
     return <contextShop.Provider value={value}>
         {children}

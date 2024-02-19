@@ -1,5 +1,12 @@
 export function reducer(state, { type, payload }) {
     switch (type) {
+        case ('SET_GOODS'):{
+            return{
+                ...state,
+                goods: payload || [],
+                loading: false,
+            }
+        }
         case ('ADD_TO_BASKET'):
             {const itemIndex = state.order.findIndex((element) => {
                 return element.mainId === payload.item.mainId;
@@ -29,11 +36,12 @@ export function reducer(state, { type, payload }) {
                 }
             }}
         case ('ADD_ONE_ITEM'):
+            console.log("Add");
             return {
                 ...state,
                 order: state.order.map((el) => {
                     if (el.mainId === payload.id) {
-                        el.quantity++;
+                        el.quantity = el.quantity + 1;
                     }
                     return el
                 }),

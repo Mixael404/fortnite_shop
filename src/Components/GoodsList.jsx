@@ -1,8 +1,11 @@
 import GoodsItem from "./GoodsItem"
+import { contextShop } from "../Context"
+import { useContext } from "react"
 
 
-export default function GoodsList({goods = [], addItem}){
+export default function GoodsList(){
 
+    const {goods = []} = useContext(contextShop)
     if(!goods.length){
         return(
             <h3>Nothing here</h3>
@@ -11,7 +14,7 @@ export default function GoodsList({goods = [], addItem}){
     return(
         <div className="goods">
             {
-                goods.map((item, index) => <GoodsItem addItem={addItem} key={index} 
+                goods.map((item, index) => <GoodsItem key={index} 
                 mainId={item.mainId}
                 displayName={item.displayName}
                 description={"Some description"}
